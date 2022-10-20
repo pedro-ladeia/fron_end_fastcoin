@@ -2,23 +2,21 @@
     <v-app>
       <v-main>
         <v-container>
-            
-          <Nuxt />
+       
+        <Nuxt />
         </v-container>
       </v-main>
     </v-app>
   </template>
 
-
 <style>
-    * {
-      font-family: 'Inspiration', cursive;
-    }
+  
 </style>
   
   <script>
   export default {
     name: 'DefaultLayout',
+    
     data() {
       return {
       }
