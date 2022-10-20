@@ -6,7 +6,6 @@
     <v-toolbar-title class="logo">FastCoin</v-toolbar-title>
     <v-bottom-navigation
     class="nav-bar-opts"
-    :value="value"
     color="teal"
     width="50%"
     grow
@@ -46,19 +45,19 @@
         </template>
 
         <v-list>
-          <v-list-item :key="n" @click="() => {}">
+          <v-list-item @click="() => {}">
             Português
           </v-list-item>
 
-          <v-list-item :key="n" @click="() => {}">
+          <v-list-item @click="() => {}">
             English
           </v-list-item>
 
-          <v-list-item :key="n" @click="() => {}">
+          <v-list-item @click="() => {}">
             Español
           </v-list-item>
 
-          <v-list-item :key="n" @click="() => {}">
+          <v-list-item @click="() => {}">
             普通话
           </v-list-item>
 
