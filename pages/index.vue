@@ -1,10 +1,7 @@
 <template>
+  
   <v-row>
-  <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-  </div>
-    <!-- TradingView Widget END -->
-
+    <RodaJequiti />
     <NavBar />
 
     <!-- Start title with typewritter  -->
@@ -21,7 +18,6 @@
       <v-col col="12" md="2"></v-col>
     </v-row>
 
-
     <!-- First icons  -->
 
     <v-row>
@@ -34,53 +30,45 @@
         justify-content="center"
       >
         <div class="iconContentWrapper">
-          <v-icon
-            size="40"
-            color="teal"
-            class="iconSelf mr-2"
-          >mdi-book-edit</v-icon>
+          <v-icon size="40" color="teal" class="iconSelf mr-2"
+            >mdi-book-edit</v-icon
+          >
           <div class="textIconWrapper">
-          <h3>100+</h3>
-          <h5>Articles</h5>
+            <h3>100+</h3>
+            <h5>Articles</h5>
+          </div>
         </div>
-      </div>
 
         <div class="iconContentWrapper">
-          <v-icon
-            size="40"
-            color="teal"
-            class="iconSelf mr-2"
-          >mdi-newspaper</v-icon>
+          <v-icon size="40" color="teal" class="iconSelf mr-2"
+            >mdi-newspaper</v-icon
+          >
           <div class="textIconWrapper">
-          <h3>10+</h3>
-          <h5>Notices/day</h5>
+            <h3>10+</h3>
+            <h5>Notices/day</h5>
+          </div>
         </div>
-      </div>
 
         <div class="iconContentWrapper">
-          <v-icon
-            size="40"
-            color="teal"
-            class="iconSelf mr-2"
-          >mdi-earth</v-icon>
+          <v-icon size="40" color="teal" class="iconSelf mr-2"
+            >mdi-earth</v-icon
+          >
           <div class="textIconWrapper">
-          <h3>1000+</h3>
-          <h5>Views</h5>
+            <h3>1000+</h3>
+            <h5>Views</h5>
+          </div>
         </div>
-      </div>
 
-      <div id="resumeTextWrapper" class="pl-2">
-          <h4>Find notices, articles, graphics, quickly, with a plain language. The best way to learn, and gain money.</h4>
-         </div>
-
-
+        <div id="resumeTextWrapper" class="pl-2">
+          <h4>
+            Find notices, articles, graphics, quickly, with a plain language.
+            The best way to learn, and gain money.
+          </h4>
+        </div>
       </v-col>
 
       <v-col col="12" md="1"></v-col>
     </v-row>
-
-
-
 
     <!-- Caroulsel  -->
 
@@ -103,78 +91,61 @@
 </template>
 
 <style>
+/*Start title with typewritter*/
 
-  /*Start title with typewritter*/
+.initTextWrapper .mainTitle {
+  font-size: 32pt;
+  font-family: 'Roboto', sans-serif !important; /*Não tá indo essa porra*/
+  font-style: italic;
+}
 
-  .initTextWrapper .mainTitle {
-    font-size: 32pt;
-    font-family: 'Roboto', sans-serif !important; /*Não tá indo essa porra*/
-  }
+#greenWord {
+  color: teal;
+}
 
-  #greenWord {
-    color: teal;
-  }
+/*First Icons */
 
+.iconsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
 
-  /*First Icons */
+.iconsWrapper .iconContentWrapper {
+  display: flex;
+  align-items: center;
+}
 
-  .iconsWrapper {
-    display: flex;
-    justify-content: space-between;
-  }
+.iconsWrapper .iconContentWrapper .iconSelf {
+  background-color: #fff;
+  padding: 0.3rem;
+  border-radius: 10px;
+}
 
-  .iconsWrapper .iconContentWrapper {
-    display: flex;
-    align-items: center;
-  }
+.iconsWrapper #resumeTextWrapper {
+  width: 30%;
+  border-left: solid 2px teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .iconsWrapper .iconContentWrapper .iconSelf {
-    background-color: #fff;
-    padding: .3rem;
-    border-radius: 10px;
-  }
+/*Caroulsel*/
 
-  .iconsWrapper #resumeTextWrapper {
-    width: 30%;
-    border-left: solid 2px teal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.text-h2 {
+  position: absolute;
 
-  /*Caroulsel*/
-
-  .text-h2 {
-    position: absolute;
-
-    background: rgba(255, 255, 255, 0) !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-    backdrop-filter: blur(3.4px) !important;
-    border: none !important;
-  }
-
-
-
+  background: rgba(255, 255, 255, 0) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  border: none !important;
+}
 </style>
 
 
 <script>
 import NavBar from '~/components/navBar.vue'
-  new TradingView.widget(
-    {
-      "autosize": true,
-      "symbol": "NASDAQ:AAPL",
-      "interval": "D",
-      "timezone": "Etc/UTC",
-      "theme": "light",
-      "style": "1",
-      "locale": "en",
-      "toolbar_bg": "#f1f3f6",
-      "enable_publishing": false,
-      "allow_symbol_change": true,
-      "container_id": "tradingview_3fc89"
-    }
-  );
+import RodaJequiti from "../components/rodaJequiti.vue"
+
 export default {
   name: 'IndexPage',
   data() {
@@ -192,49 +163,14 @@ export default {
         'Third',
         'Fourth',
         'Fifth',
-      ],
+      ]
     }
   },
-  components: { NavBar },
-  created() {
-    this.graphicTrading();
-  },  
+  components: { NavBar, RodaJequiti },
+
+  
   methods: {
-    /* graphicTrading() {
-      let widget = new TradingView.widget({
-        "symbols": [
-          {
-            "proName": "FOREXCOM:SPXUSD",
-            "title": "S&P 500"
-          },
-          {
-            "proName": "FOREXCOM:NSXUSD",
-            "title": "US 100"
-          },
-          {
-            "proName": "FX_IDC:EURUSD",
-            "title": "EUR/USD"
-          },
-          {
-            "proName": "BITSTAMP:BTCUSD",
-            "title": "Bitcoin"
-          },
-          {
-            "proName": "BITSTAMP:ETHUSD",
-            "title": "Ethereum"
-          }
-        ],
-        "showSymbolLogo": true,
-        "colorTheme": "light",
-        "isTransparent": false,
-        "displayMode": "adaptive",
-        "locale": "en"
-      });
-      return widget;
-    }, */  
-  }
-  /*
-  methods: {
+    /*
     typeWriter () {
       const elementTitle1 = document.querySelector('#greenWord')
       const elementTitle2 = document.querySelector('.mainTitle')
@@ -255,7 +191,8 @@ export default {
           setTimeout(() => elementTitle2.innerHTML += element  , 75 * ind);
       }) 
       }, 1300);
-  }*/
-
+  }
+*/
+  }
 }
 </script>
