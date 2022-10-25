@@ -1,30 +1,34 @@
 <template>
     
-    <!-- TradingView Widget BEGIN -->
+   <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
   {
   "symbols": [
     {
-      "proName": "FOREXCOM:SPXUSD",
-      "title": "S&P 500"
+      "description": "BTC/USDT",
+      "proName": "BINANCE:BTCUSDT"
     },
     {
-      "proName": "FOREXCOM:NSXUSD",
-      "title": "US 100"
+      "description": "ETH/USDT",
+      "proName": "BINANCE:ETHUSDT"
     },
     {
-      "proName": "FX_IDC:EURUSD",
-      "title": "EUR/USD"
+      "description": "ADA/USDT",
+      "proName": "BINANCE:ADAUSDT"
     },
     {
-      "proName": "BITSTAMP:BTCUSD",
-      "title": "Bitcoin"
+      "description": "SOL/USDT",
+      "proName": "BINANCE:SOLUSDT"
     },
     {
-      "proName": "BITSTAMP:ETHUSD",
-      "title": "Ethereum"
+      "description": "BNB/USDT",
+      "proName": "BINANCE:BNBUSDT"
+    },
+    {
+      "description": "LUNA/USDT",
+      "proName": "BINANCE:LUNAUSDT"
     }
   ],
   "showSymbolLogo": true,
