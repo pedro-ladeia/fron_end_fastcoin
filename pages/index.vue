@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row class="d-flex flex-column">
     <RodaJequiti />
     <NavBar />
 
@@ -7,7 +7,7 @@
     <v-row class="mt-16">
       <v-col col="12" md="2"></v-col>
 
-      <v-col class="initTextWrapper" col="12" md="8" align="center">
+      <v-col class="initTextWrapper" col="12" md="8" sm="6" align="center">
         <h1 id="greenWord" class="mainTitle">EXPLORE</h1>
         <h1 class="mainTitle">
           THE BEST INFO PLACE FOR BEGGINERS AND CRIPTOLOVERS!
@@ -23,9 +23,10 @@
       <v-col col="12" md="1"></v-col>
 
       <v-col
-        class="iconsWrapper mt-10"
+        class="iconsWrapper mt-10 mb-6"
         col="12"
         md="10"
+        sm="6"
         justify-content="center"
       >
         <div class="iconContentWrapper">
@@ -71,40 +72,289 @@
 
     <!-- Caroulsel  -->
 
-    <v-row class="noticeWrapper">
-      <v-col col="12" md="12">
-        <div class="titleSection mt-16">
-          <img :src="btcGirando" alt="" width="90rem" />
-          <h1 class="ml-7 mr-1 mt-4">Notices</h1>
-          <img :src="btcGirando" alt="" width="90rem" />
-        </div>
+    <v-row class="mt-16 mb-16" align="center" justify="center">
+      <img :src="btcGirando" alt="" width="90rem" />
+      <h1 class="ml-7 mr-1 mt-4 titleSection">Notices</h1>
+      <img :src="btcGirando" alt="" width="90rem" />
+    </v-row>
 
-      
-        <v-carousel
-          class="mt-16"
-          cycle
-          height="40rem"
-          hide-delimiter-background
-          show-arrows-on-hover
-        >
-          <v-carousel-item v-for="(slide, i) in slides" :key="i">
-            <v-row class="fill-height" align="end" justify="center">
-              <img :src="colors[i]" width="100%"/>
+    <v-carousel
+      class="caro mb-10"
+      cycle
+      height="35rem"
+      hide-delimiter-background
+      show-arrows-on-hover
+    >
+      <v-carousel-item v-for="(slide, i) in slides" :key="i">
+        <v-row class="fill-height" align="end" justify="center">
+          <img :src="colors[i]" width="100%" />
 
-              <div class="text-h2 mb-10 ml-4">
-                <a href="#" target="_blank" rel="noopener noreferrer">{{
-                  slide
-                }}</a>
+          <div class="text-h2 mb-10 ml-4">
+            <a href="#" target="_blank" rel="noopener noreferrer">{{
+              slide
+            }}</a>
+          </div>
+        </v-row>
+      </v-carousel-item>
+    </v-carousel>
+
+    <!-- Articles -->
+
+    <v-row class="mt-16 mb-10">
+      <v-col col="12" md="12" sm="6">
+        <v-row class="mt-16 mb-16" align="center" justify="center">
+          <img :src="btcGirando" alt="" width="90rem" />
+          <h1 class="ml-7 mr-1 mt-4 titleSection">Articles</h1>
+          <img :src="btcGirando" alt="" width="90rem" />
+        </v-row>
+
+        <v-row>
+          <v-card class="mx-auto" max-width="344">
+            <v-img :src="colors[2]" height="200px"></v-img>
+
+            <v-card-title> Bitcoin </v-card-title>
+
+            <v-card-subtitle> The main Cripto </v-card-subtitle>
+
+            <v-card-actions>
+              <v-btn color="teal" text> Explore </v-btn>
+
+              <v-spacer></v-spacer>
+
+              <v-btn icon @click="show = !show">
+                <v-icon>{{
+                  show ? 'mdi-chevron-up' : 'mdi-chevron-down'
+                }}</v-icon>
+              </v-btn>
+            </v-card-actions>
+
+            <v-expand-transition>
+              <div v-show="show">
+                <v-divider></v-divider>
+
+                <v-card-text>
+                  It is a free and decentralized cryptocurrency, an electronic
+                  money for peer-to-peer financial transactions (without
+                  intermediaries), Bitcoin is considered the world's first
+                  digital currency decentralized, constituting an alternative
+                  economic system, and responsible for the resurgence of the
+                  free banking.
+                </v-card-text>
               </div>
-            </v-row>
-          </v-carousel-item>
-        </v-carousel>
+            </v-expand-transition>
+          </v-card>
 
+          <v-card class="mx-auto" max-width="344">
+            <v-img :src="colors[6]" height="200px"></v-img>
+
+            <v-card-title> Ethereum </v-card-title>
+
+            <v-card-subtitle> The main Blockchain </v-card-subtitle>
+
+            <v-card-actions>
+              <v-btn color="teal" text> Explore </v-btn>
+
+              <v-spacer></v-spacer>
+
+              <v-btn icon @click="show = !show">
+                <v-icon>{{
+                  show ? 'mdi-chevron-up' : 'mdi-chevron-down'
+                }}</v-icon>
+              </v-btn>
+            </v-card-actions>
+
+            <v-expand-transition>
+              <div v-show="show">
+                <v-divider></v-divider>
+
+                <v-card-text>
+                  Ethereum is a technology that encompasses digital money,
+                  global payments and investments. The community has created a
+                  booming digital economy, new ways to make money online, and
+                  more. It's open to anyone, anywhere in the world – all you
+                  need is the Internet.
+                </v-card-text>
+              </div>
+            </v-expand-transition>
+          </v-card>
+
+          <v-card class="mx-auto" max-width="344">
+            <v-img :src="colors[5]" height="200px"></v-img>
+
+            <v-card-title> Terra Luna </v-card-title>
+
+            <v-card-subtitle> The Do Kwon Platform </v-card-subtitle>
+
+            <v-card-actions>
+              <v-btn color="teal" text> Explore </v-btn>
+
+              <v-spacer></v-spacer>
+
+              <v-btn icon @click="show = !show">
+                <v-icon>{{
+                  show ? 'mdi-chevron-up' : 'mdi-chevron-down'
+                }}</v-icon>
+              </v-btn>
+            </v-card-actions>
+
+            <v-expand-transition>
+              <div v-show="show">
+                <v-divider></v-divider>
+
+                <v-card-text>
+                  LUNA (Terra) is Earth's native governance token, stablecoin
+                  creation platform. The main feature of this protocol is the
+                  possibility for the user to associate cryptocurrencies with
+                  other assets, helping to solve problems such as fluctuation in
+                  values. Through the financial user of other stable assets
+                  (DemonFi), the project allows, among others, that the user in
+                  other stable assets and performs fee submissions.
+                </v-card-text>
+              </div>
+            </v-expand-transition>
+          </v-card>
+        </v-row>
+      </v-col>
+    </v-row>
+
+    <!-- Graphics -->
+
+    <v-row>
+      <v-col class="mt-16 " col="12" md="12" sm="6">
+        <v-row class="mt-16 mb-16" align="center" justify="center">
+          <img :src="btcGirando" alt="" width="90rem" />
+          <h1 class="ml-7 mr-1 mt-4 titleSection">Main Info</h1>
+          <img :src="btcGirando" alt="" width="90rem" />
+        </v-row>
+        <Graphic />
+      </v-col>
+    </v-row>
+
+    <!-- New (testing) -->
+
+    <v-row>
+      <v-col class="mt-16" col="12" md="12" sm="6">
+        <v-row class="mt-16 mb-16" align="center" justify="center">
+          <img :src="btcGirando" alt="" width="90rem" />
+          <h1 class="ml-7 mr-1 mt-4 titleSection">New</h1> <!--Colocar emoji-->
+          <img :src="btcGirando" alt="" width="90rem" />
+        </v-row>
+
+        <v-row class="twitterWrapper">
+          <v-card class="mx-auto" color="transparent" dark max-width="350">
+            <v-card-title>
+              <v-icon large left color="#26c6da"> mdi-twitter </v-icon>
+              <span class="text-h6 font-weight-light">Twitter</span>
+            </v-card-title>
+
+            <v-card-text class="text-h5 font-weight-bold">
+              "Tesla will make some merch buyable with Doge & see how it goes."
+            </v-card-text>
+
+            <v-card-actions>
+              <v-list-item class="grow">
+                <v-list-item-avatar color="grey darken-3">
+                  <v-img class="elevation-6" alt="" :src="imgTwitter"></v-img>
+                </v-list-item-avatar>
+
+                <v-list-item-content>
+                  <v-list-item-title>Elon Musk</v-list-item-title>
+                </v-list-item-content>
+
+                <v-row align="center" justify="end">
+                  <v-icon class="mr-1"> mdi-heart </v-icon>
+                  <span class="subheading mr-2">217.5k</span>
+                  <span class="mr-1">·</span>
+                  <v-icon class="mr-1"> mdi-share-variant </v-icon>
+                  <span class="subheading">36.7k</span>
+                </v-row>
+              </v-list-item>
+            </v-card-actions>
+          </v-card>
+
+
+          <v-card class="mx-auto" color="transparent" dark max-width="350">
+            <v-card-title>
+              <v-icon large left color="#26c6da"> mdi-twitter </v-icon>
+              <span class="text-h6 font-weight-light">Twitter</span>
+            </v-card-title>
+
+            <v-card-text class="text-h5 font-weight-bold">
+              "Tesla will make some merch buyable with Doge & see how it goes."
+            </v-card-text>
+
+            <v-card-actions>
+              <v-list-item class="grow">
+                <v-list-item-avatar color="grey darken-3">
+                  <v-img class="elevation-6" alt="" :src="imgTwitter"></v-img>
+                </v-list-item-avatar>
+
+                <v-list-item-content>
+                  <v-list-item-title>Elon Musk</v-list-item-title>
+                </v-list-item-content>
+
+                <v-row align="center" justify="end">
+                  <v-icon class="mr-1"> mdi-heart </v-icon>
+                  <span class="subheading mr-2">217.5k</span>
+                  <span class="mr-1">·</span>
+                  <v-icon class="mr-1"> mdi-share-variant </v-icon>
+                  <span class="subheading">36.7k</span>
+                </v-row>
+              </v-list-item>
+            </v-card-actions>
+          </v-card>
+
+
+          <v-card class="mx-auto" color="transparent" dark max-width="350">
+            <v-card-title>
+              <v-icon large left color="#26c6da"> mdi-twitter </v-icon>
+              <span class="text-h6 font-weight-light">Twitter</span>
+            </v-card-title>
+
+            <v-card-text class="text-h5 font-weight-bold">
+              "Tesla will make some merch buyable with Doge & see how it goes."
+            </v-card-text>
+
+            <v-card-actions>
+              <v-list-item class="grow">
+                <v-list-item-avatar color="grey darken-3">
+                  <v-img class="elevation-6" alt="" :src="imgTwitter"></v-img>
+                </v-list-item-avatar>
+
+                <v-list-item-content>
+                  <v-list-item-title>Elon Musk</v-list-item-title>
+                </v-list-item-content>
+
+                <v-row align="center" justify="end">
+                  <v-icon class="mr-1"> mdi-heart </v-icon>
+                  <span class="subheading mr-2">217.5k</span>
+                  <span class="mr-1">·</span>
+                  <v-icon class="mr-1"> mdi-share-variant </v-icon>
+                  <span class="subheading">36.7k</span>
+                </v-row>
+              </v-list-item>
+            </v-card-actions>
+          </v-card>
+        </v-row>
+      </v-col>
+    </v-row>
+
+
+    <!-- Stories -->
+
+    <v-row>
+      <v-col class="mt-16" col="12" md="12" sm="6">
+        <v-row class="mt-16 mb-16" align="center" justify="center">
+          <img :src="btcGirando" alt="" width="90rem" />
+          <h1 class="ml-7 mr-1 mt-4 titleSection">TokenPedia</h1>
+          <img :src="btcGirando" alt="" width="90rem" />
+        </v-row>
+        
+        
 
       </v-col>
     </v-row>
 
-    
   </v-row>
 </template>
 
@@ -149,6 +399,10 @@
 
 /*Caroulsel*/
 
+.caro {
+  border-radius: 10px;
+}
+
 .text-h2 {
   position: absolute;
   font-size: 10pt !important;
@@ -167,40 +421,40 @@
   color: #fff;
 }
 
-
-
-.noticeWrapper .titleSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.noticeWrapper .titleSection h1 {
+.titleSection {
   font-size: 40pt;
   font-family: 'Roboto', sans-serif !important;
   font-style: italic;
 }
 
+/* Articles */
+
+.articleWrapper {
+  display: flex;
+}
 
 </style>
 
 
 <script>
 import NavBar from '~/components/navBar.vue'
-import RodaJequiti from '../components/rodaJequiti.vue'
+import RodaJequiti from '~/components/rodaJequiti.vue'
+import Graphic from '~/components/mainGraphs.vue'
 
 export default {
   name: 'IndexPage',
   data() {
     return {
       btcGirando: 'img/btcGirando.gif',
+      imgTwitter: 'img/imgTwitter.jpg',
       colors: [
         'img/imgTest3.jpg',
         'img/imgTest2.jpg',
         'img/imgTest5.jpg',
         'img/imgTest4.jpg',
         'img/imgTest6.jpg',
-        'deep-purple accent-4',
+        'img/imgTest7.jpg',
+        'img/imgtest8.jpg',
       ],
       slides: [
         'Os touros Cardano perdem o fôlego após o hard fork Vasil: Queda de preço de 40% ADA.',
@@ -209,9 +463,10 @@ export default {
         'Dogecoin sobe 18% após Musk dizer que Tesla vai aceitar moeda como pagamento',
         'USDT chegará a milhares de caixas eletrônicos no Brasil em novembro',
       ],
+      show: false,
     }
   },
-  components: { NavBar, RodaJequiti },
+  components: { NavBar, RodaJequiti, Graphic },
 
   methods: {
     /*
