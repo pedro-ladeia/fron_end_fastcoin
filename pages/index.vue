@@ -4,17 +4,11 @@
     <NavBar />
 
     <!-- Start title with typewritter  -->
-    <v-row class="mt-16">
-      <v-col col="12" md="2"></v-col>
-
-      <v-col class="initTextWrapper" col="12" md="8" sm="6" align="center">
-        <h1 id="greenWord" class="mainTitle">EXPLORE</h1>
-        <h1 class="mainTitle">
-          THE BEST INFO PLACE FOR BEGGINERS AND CRIPTOLOVERS!
-        </h1>
-      </v-col>
-
-      <v-col col="12" md="2"></v-col>
+    <v-row class="mt-16 initTextWrapper">
+      <h1 id="greenWord" class="mainTitle">EXPLORE</h1>
+      <h1 class="mainTitle">
+        THE BEST INFO PLACE FOR BEGGINERS AND CRIPTOLOVERS!
+      </h1>
     </v-row>
 
     <!-- First icons  -->
@@ -30,40 +24,40 @@
         justify-content="center"
       >
         <div class="iconContentWrapper">
-          <v-icon size="40" color="teal" class="iconSelf mr-2"
+          <v-icon size="50" color="teal" class="iconSelf mr-2"
             >mdi-book-edit</v-icon
           >
           <div class="textIconWrapper">
-            <h3>100+</h3>
-            <h5>Articles</h5>
+            <h2>100+</h2>
+            <h4>Articles</h4>
           </div>
         </div>
 
         <div class="iconContentWrapper">
-          <v-icon size="40" color="teal" class="iconSelf mr-2"
+          <v-icon size="50" color="teal" class="iconSelf mr-2"
             >mdi-newspaper</v-icon
           >
           <div class="textIconWrapper">
-            <h3>10+</h3>
-            <h5>Notices/day</h5>
+            <h2>10+</h2>
+            <h4>Notices/day</h4>
           </div>
         </div>
 
         <div class="iconContentWrapper">
-          <v-icon size="40" color="teal" class="iconSelf mr-2"
+          <v-icon size="50" color="teal" class="iconSelf mr-2"
             >mdi-earth</v-icon
           >
           <div class="textIconWrapper">
-            <h3>1000+</h3>
-            <h5>Views</h5>
+            <h2>1000+</h2>
+            <h4>Views</h4>
           </div>
         </div>
 
         <div id="resumeTextWrapper" class="pl-2">
-          <h4>
+          <h3>
             Find notices, articles, graphics, quickly, with a plain language.
             The best way to learn, and gain money.
-          </h4>
+          </h3>
         </div>
       </v-col>
 
@@ -82,6 +76,7 @@
       class="caro mb-10"
       cycle
       height="35rem"
+    
       hide-delimiter-background
       show-arrows-on-hover
     >
@@ -109,7 +104,7 @@
         </v-row>
 
         <v-row>
-          <v-card class="mx-auto" max-width="344">
+          <v-card class="mx-auto" max-width="400">
             <v-img :src="colors[2]" height="200px"></v-img>
 
             <v-card-title> Bitcoin </v-card-title>
@@ -144,7 +139,7 @@
             </v-expand-transition>
           </v-card>
 
-          <v-card class="mx-auto" max-width="344">
+          <v-card class="mx-auto" max-width="400">
             <v-img :src="colors[6]" height="200px"></v-img>
 
             <v-card-title> Ethereum </v-card-title>
@@ -178,7 +173,7 @@
             </v-expand-transition>
           </v-card>
 
-          <v-card class="mx-auto" max-width="344">
+          <v-card class="mx-auto" max-width="400">
             <v-img :src="colors[5]" height="200px"></v-img>
 
             <v-card-title> Terra Luna </v-card-title>
@@ -220,7 +215,7 @@
     <!-- Graphics -->
 
     <v-row>
-      <v-col class="mt-16 " col="12" md="12" sm="6">
+      <v-col class="mt-16" col="12" md="12" sm="6">
         <v-row class="mt-16 mb-16" align="center" justify="center">
           <img :src="btcGirando" alt="" width="90rem" />
           <h1 class="ml-7 mr-1 mt-4 titleSection">Main Info</h1>
@@ -236,12 +231,13 @@
       <v-col class="mt-16" col="12" md="12" sm="6">
         <v-row class="mt-16 mb-16" align="center" justify="center">
           <img :src="btcGirando" alt="" width="90rem" />
-          <h1 class="ml-7 mr-1 mt-4 titleSection">New</h1> <!--Colocar emoji-->
+          <h1 class="ml-7 mr-1 mt-4 titleSection">New</h1>
+          <!--Colocar emoji-->
           <img :src="btcGirando" alt="" width="90rem" />
         </v-row>
 
         <v-row class="twitterWrapper">
-          <v-card class="mx-auto" color="transparent" dark max-width="350">
+          <v-card class="mx-auto" color="transparent" dark max-width="400">
             <v-card-title>
               <v-icon large left color="#26c6da"> mdi-twitter </v-icon>
               <span class="text-h6 font-weight-light">Twitter</span>
@@ -272,8 +268,7 @@
             </v-card-actions>
           </v-card>
 
-
-          <v-card class="mx-auto" color="transparent" dark max-width="350">
+          <v-card class="mx-auto" color="transparent" dark max-width="400">
             <v-card-title>
               <v-icon large left color="#26c6da"> mdi-twitter </v-icon>
               <span class="text-h6 font-weight-light">Twitter</span>
@@ -304,8 +299,7 @@
             </v-card-actions>
           </v-card>
 
-
-          <v-card class="mx-auto" color="transparent" dark max-width="350">
+          <v-card class="mx-auto" color="transparent" dark max-width="400">
             <v-card-title>
               <v-icon large left color="#26c6da"> mdi-twitter </v-icon>
               <span class="text-h6 font-weight-light">Twitter</span>
@@ -338,7 +332,6 @@
         </v-row>
       </v-col>
     </v-row>
-
 
     <!-- Stories -->
 
@@ -349,18 +342,52 @@
           <h1 class="ml-7 mr-1 mt-4 titleSection">TokenPedia</h1>
           <img :src="btcGirando" alt="" width="90rem" />
         </v-row>
-        
-        
 
+        <v-row>
+          <v-card class="mx-auto" max-width="350">
+            <v-img
+              class="white--text align-end"
+              height="450px"
+              :src="stories[0]"
+            >
+              <v-card-title>O que é Blockchain</v-card-title>
+            </v-img>
+          </v-card>
+
+          <v-card class="mx-auto" max-width="350">
+            <v-img
+              class="white--text align-end"
+              height="450px"
+              :src="stories[1]"
+            >
+              <v-card-title>O que é NFT</v-card-title>
+            </v-img>
+          </v-card>
+
+          <v-card class="mx-auto" max-width="350">
+            <v-img
+              class="white--text align-end"
+              height="450px"
+              :src="stories[2]"
+            >
+              <v-card-title>O que é Smart Contract</v-card-title>
+            </v-img>
+          </v-card>
+
+        </v-row>
       </v-col>
     </v-row>
-
   </v-row>
 </template>
 
 <style>
 /*Start title with typewritter*/
 
+.initTextWrapper h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 42pt !important;
+}
 .initTextWrapper .mainTitle {
   font-size: 32pt;
   font-family: 'Roboto', sans-serif !important;
@@ -410,6 +437,7 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(3.4px) !important;
   border: none !important;
+  width: 90%;
 }
 
 .text-h2 a {
@@ -432,7 +460,6 @@
 .articleWrapper {
   display: flex;
 }
-
 </style>
 
 
@@ -462,6 +489,11 @@ export default {
         '4 sinais que indicam alta para o bitcoin na reta final de 2022 ',
         'Dogecoin sobe 18% após Musk dizer que Tesla vai aceitar moeda como pagamento',
         'USDT chegará a milhares de caixas eletrônicos no Brasil em novembro',
+      ],
+      stories: [
+        'img/imgTestStorie1.jpg',
+        'img/imgTestStorie2.jfif',
+        'img/imgTestStorie3.jpg'
       ],
       show: false,
     }
