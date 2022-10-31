@@ -6,7 +6,7 @@
     <!-- Start title with typewritter  -->
     <v-row class="mt-16 initTextWrapper">
       <h1 id="greenWord" class="mainTitle">EXPLORE</h1>
-      <h1 class="mainTitle">
+      <h1 class="typeWriter mainTitle">
         THE BEST INFO PLACE FOR BEGGINERS AND CRIPTOLOVERS!
       </h1>
     </v-row>
@@ -76,7 +76,6 @@
       class="caro mb-10"
       cycle
       height="35rem"
-    
       hide-delimiter-background
       show-arrows-on-hover
     >
@@ -373,7 +372,6 @@
               <v-card-title>O que é Smart Contract</v-card-title>
             </v-img>
           </v-card>
-
         </v-row>
       </v-col>
     </v-row>
@@ -387,6 +385,7 @@
   width: 100%;
   text-align: center;
   font-size: 42pt !important;
+  opacity: 0;
 }
 .initTextWrapper .mainTitle {
   font-size: 32pt;
@@ -394,9 +393,37 @@
   font-style: italic;
 }
 
+.initTextWrapper .mainTitle::after {
+  content: '|';
+    opacity: 1;
+    animation: pisc .7s infinite;
+}
+
+
+
 #greenWord {
   color: teal;
 }
+
+#greenWord::after {
+    content: '|';
+    margin-left: .4rem;
+    opacity: 1;
+    animation: pisc .7s infinite
+}
+
+@keyframes pisc {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+
 
 /*First Icons */
 
@@ -493,37 +520,41 @@ export default {
       stories: [
         'img/imgTestStorie1.jpg',
         'img/imgTestStorie2.jfif',
-        'img/imgTestStorie3.jpg'
+        'img/imgTestStorie3.jpg',
       ],
       show: false,
     }
   },
+
+  mounted() {
+    this.typeWriter()
+  },
   components: { NavBar, RodaJequiti, Graphic },
 
   methods: {
-    /*
-    typeWriter () {
+    typeWriter() {
       const elementTitle1 = document.querySelector('#greenWord')
-      const elementTitle2 = document.querySelector('.mainTitle')
+      const elementTitle2 = document.querySelector('.typeWriter')
 
-      const arrGreenWord = elementTitle1.innerHTML.split('');
-      const arrPhrase = elementTitle2.innerHTML.split('');
-      elementTitle1.innerHTML = '';
-      elementTitle2.innerHTML = '';
-      elementTitle1.style.opacity = '1';
-      elementTitle2.style.opacity = '1';
+      const arrGreenWord = elementTitle1.innerHTML.split('')
+      const arrPhrase = elementTitle2.innerHTML.split('')
+      elementTitle1.innerHTML = ''
+      elementTitle2.innerHTML = ''
+      elementTitle1.style.opacity = '1'
+      elementTitle2.style.opacity = '1'
 
       arrGreenWord.forEach((element, ind) => {
-          setTimeout(() => elementTitle1.innerHTML += element, 75 * ind);
-      });
+        setTimeout(() => {
+          setTimeout(() => (elementTitle1.innerHTML += element), 75 * ind)
+        })
+      }, 2000)
 
       setTimeout(() => {
         arrPhrase.forEach((element, ind) => {
-          setTimeout(() => elementTitle2.innerHTML += element  , 75 * ind);
-      }) 
-      }, 1300);
-  }
-*/
+          setTimeout(() => (elementTitle2.innerHTML += element), 75 * ind)
+        })
+      }, 1100)
+    },
   },
 }
 </script>

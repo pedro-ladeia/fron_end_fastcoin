@@ -5,6 +5,8 @@
   .__main {
     height: 600px;
     overflow-y: auto;
+    background: url("~/static/img/imgbg2.gif") no-repeat !important;
+    background-color: #000 !important;
   }
 
 </style>
@@ -24,6 +26,8 @@
     
     data() {
       return {
+
+        imgBg: 'img/imgbg.gif'
       }
     },
   }

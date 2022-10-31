@@ -1,6 +1,6 @@
 <template>
     <v-app-bar
-        class="pt-4 nav-bar-Wrapper"
+        class=" nav-bar-Wrapper"
         color="transparent"
     >
     <v-toolbar-title class="logo">FastCoin</v-toolbar-title>

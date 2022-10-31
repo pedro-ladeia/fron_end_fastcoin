@@ -11,7 +11,7 @@
   "displayCurrency": "USD",
   "colorTheme": "dark",
   "locale": "en",
-  "isTransparent": true
+  "isTransparent": false
 }
   </script>
 </div>
