@@ -236,7 +236,7 @@
         </v-row>
 
         <v-row class="twitterWrapper">
-          <v-card class="mx-auto" color="transparent" dark max-width="400">
+          <v-card class="mx-auto" color="black" dark max-width="400">
             <v-card-title>
               <v-icon large left color="#26c6da"> mdi-twitter </v-icon>
               <span class="text-h6 font-weight-light">Twitter</span>
@@ -267,7 +267,7 @@
             </v-card-actions>
           </v-card>
 
-          <v-card class="mx-auto" color="transparent" dark max-width="400">
+          <v-card class="mx-auto" color="black" dark max-width="400">
             <v-card-title>
               <v-icon large left color="#26c6da"> mdi-twitter </v-icon>
               <span class="text-h6 font-weight-light">Twitter</span>
@@ -298,7 +298,7 @@
             </v-card-actions>
           </v-card>
 
-          <v-card class="mx-auto" color="transparent" dark max-width="400">
+          <v-card class="mx-auto" color="black" dark max-width="400">
             <v-card-title>
               <v-icon large left color="#26c6da"> mdi-twitter </v-icon>
               <span class="text-h6 font-weight-light">Twitter</span>
@@ -343,15 +343,51 @@
         </v-row>
 
         <v-row>
-          <v-card class="mx-auto" max-width="350">
-            <v-img
-              class="white--text align-end"
-              height="450px"
-              :src="stories[0]"
-            >
-              <v-card-title>O que é Blockchain</v-card-title>
-            </v-img>
-          </v-card>
+
+          <v-dialog v-model="dialog" width="500">
+            
+            <template v-slot:activator="{ on, attrs }">
+
+              <v-card 
+                class="mx-auto" 
+                max-width="350"
+                v-bind="attrs"
+                v-on="on"
+              >
+              <v-img
+                class="white--text align-end"
+                height="450px"
+                :src="stories[0]"
+              >
+                <v-card-title>O que é Blockchain </v-card-title>
+              </v-img>
+            </v-card>
+            </template>
+            
+            <v-card>
+        <v-card-title class="text-h5 grey lighten-2">
+          Privacy Policy
+        </v-card-title>
+
+        <v-card-text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="dialog = false"
+          >
+            I accept
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+
+          </v-dialog>
 
           <v-card class="mx-auto" max-width="350">
             <v-img
@@ -375,6 +411,8 @@
         </v-row>
       </v-col>
     </v-row>
+
+    <Storie />
   </v-row>
 </template>
 
@@ -395,35 +433,30 @@
 
 .initTextWrapper .mainTitle::after {
   content: '|';
-    opacity: 1;
-    animation: pisc .7s infinite;
+  opacity: 1;
+  animation: pisc 0.7s infinite;
 }
-
-
 
 #greenWord {
   color: teal;
 }
 
 #greenWord::after {
-    content: '|';
-    margin-left: .4rem;
-    opacity: 1;
-    animation: pisc .7s infinite
+  content: '|';
+  margin-left: 0.4rem;
+  opacity: 1;
+  animation: pisc 0.7s infinite;
 }
 
 @keyframes pisc {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
-
-
-
-
 
 /*First Icons */
 
@@ -494,6 +527,7 @@
 import NavBar from '~/components/navBar.vue'
 import RodaJequiti from '~/components/rodaJequiti.vue'
 import Graphic from '~/components/mainGraphs.vue'
+//import Storie from '~/components/storie.vue'
 
 export default {
   name: 'IndexPage',
@@ -529,7 +563,7 @@ export default {
   mounted() {
     this.typeWriter()
   },
-  components: { NavBar, RodaJequiti, Graphic },
+  components: { NavBar, RodaJequiti, Graphic,  },
 
   methods: {
     typeWriter() {
