@@ -343,50 +343,46 @@
         </v-row>
 
         <v-row>
-
           <v-dialog v-model="dialog" width="500">
-            
             <template v-slot:activator="{ on, attrs }">
-
-              <v-card 
-                class="mx-auto" 
-                max-width="350"
-                v-bind="attrs"
-                v-on="on"
-              >
-              <v-img
-                class="white--text align-end"
-                height="450px"
-                :src="stories[0]"
-              >
-                <v-card-title>O que é Blockchain </v-card-title>
-              </v-img>
-            </v-card>
+              <v-card class="mx-auto" max-width="350" v-bind="attrs" v-on="on">
+                <v-img
+                  class="white--text align-end"
+                  height="450px"
+                  :src="stories[0]"
+                >
+                  <v-card-title>O que é Blockchain </v-card-title>
+                </v-img>
+              </v-card>
             </template>
-            
+
             <v-card>
-        <v-card-title class="text-h5 grey lighten-2">
-          Privacy Policy
-        </v-card-title>
+              <!-- 
+              <v-card-title class="text-h5 grey lighten-2">
+                Privacy Policy
+              </v-card-title>
 
-        <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </v-card-text>
+              <v-card-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </v-card-text>
 
-        <v-divider></v-divider>
+              <v-divider></v-divider>
 
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            text
-            @click="dialog = false"
-          >
-            I accept
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="primary" text @click="dialog = false">
+                  I accept
+                </v-btn>
+              </v-card-actions>
+-->
 
+            </v-card>
           </v-dialog>
 
           <v-card class="mx-auto" max-width="350">
@@ -412,7 +408,10 @@
       </v-col>
     </v-row>
 
-    <Storie />
+    <v-row>
+      <Storie/>
+    </v-row>
+
   </v-row>
 </template>
 
@@ -527,7 +526,7 @@
 import NavBar from '~/components/navBar.vue'
 import RodaJequiti from '~/components/rodaJequiti.vue'
 import Graphic from '~/components/mainGraphs.vue'
-//import Storie from '~/components/storie.vue'
+import Storie from '~/components/storie.vue'
 
 export default {
   name: 'IndexPage',
@@ -557,13 +556,14 @@ export default {
         'img/imgTestStorie3.jpg',
       ],
       show: false,
+      dialog: false,
     }
   },
 
   mounted() {
     this.typeWriter()
   },
-  components: { NavBar, RodaJequiti, Graphic,  },
+  components: { NavBar, RodaJequiti, Graphic },
 
   methods: {
     typeWriter() {
