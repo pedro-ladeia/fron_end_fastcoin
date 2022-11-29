@@ -19,10 +19,8 @@ export default {
           
           ],
           script:[
-            { type:"text/javascript", src:"https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js", async: true,
-              type:"text/javascript", src:"plugins/storie.js", async: true
-            },
-            /*{ type:"text/javascript", src:"https://s3.tradingview.com/tv.js", async: true}*/
+            { type:"text/javascript", src:"https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js", async: true },
+            
           ]
   },
 
