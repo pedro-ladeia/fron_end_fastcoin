@@ -343,11 +343,11 @@
         </v-row>
 
         <v-row>
-          <v-dialog v-model="dialog" width="500">
+          <v-dialog v-model="dialog" width="450px">
             <template v-slot:activator="{ on, attrs }">
               <v-card class="mx-auto" max-width="350" v-bind="attrs" v-on="on">
                 <v-img
-                  class="white--text align-end"
+                  class="white-text align-end"
                   height="450px"
                   :src="stories[0]"
                 >
@@ -357,37 +357,13 @@
             </template>
 
             <v-card>
-              <!-- 
-              <v-card-title class="text-h5 grey lighten-2">
-                Privacy Policy
-              </v-card-title>
-
-              <v-card-text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </v-card-text>
-
-              <v-divider></v-divider>
-
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary" text @click="dialog = false">
-                  I accept
-                </v-btn>
-              </v-card-actions>
--->
-
+              <Storie />
             </v-card>
           </v-dialog>
 
           <v-card class="mx-auto" max-width="350">
             <v-img
-              class="white--text align-end"
+              class="white-text align-end"
               height="450px"
               :src="stories[1]"
             >
@@ -407,11 +383,6 @@
         </v-row>
       </v-col>
     </v-row>
-
-    <v-row>
-      <Storie/>
-    </v-row>
-
   </v-row>
 </template>
 
@@ -563,7 +534,7 @@ export default {
   mounted() {
     this.typeWriter()
   },
-  components: { NavBar, RodaJequiti, Graphic },
+  components: { NavBar, RodaJequiti, Graphic, Storie},
 
   methods: {
     typeWriter() {
