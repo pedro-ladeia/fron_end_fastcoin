@@ -27,7 +27,7 @@ img {
 .slide {
   max-width: 100%;
   max-height: 100%;
-  margin: 20px auto;
+  margin: 13px 2px 0 2px;
   display: grid;
   box-shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.4);
 }
@@ -87,7 +87,7 @@ img {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
   transform: translateX(-100%);
-  animation: thumb 5s forwards linear;
+  animation: thumb 9s forwards linear;
 }
 
 @keyframes thumb {
@@ -111,10 +111,10 @@ export default {
       ],
     }
   },
+  mounted() {
+   new SlideStories('slide')
+  },
   components: { storieJs },
-  methods: {
-    
-  }
 }
 
 class SlideStories {
@@ -162,7 +162,7 @@ class SlideStories {
 
   autoSlide() {
     clearTimeout(this.timeout)
-    this.timeout = setTimeout(this.next, 5000)
+    this.timeout = setTimeout(this.next, 9000)
   }
 
   init() {
@@ -176,5 +176,4 @@ class SlideStories {
   }
 
 }
-new SlideStories('slide')
 </script>
